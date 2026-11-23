@@ -14,7 +14,21 @@ export default defineEventHandler(async (event) => {
   if (company.length > 120) throw createError({ statusCode: 400, statusMessage: 'Nama perusahaan terlalu panjang.' })
   if (!challenge || challenge.length > 300) throw createError({ statusCode: 400, statusMessage: 'Pilih tantangan yang paling mendekati.' })
 
-  // Demo endpoint: replace this log with a CRM/API integration in production.
-  console.info('[checkout lead received]', { name, email, company, challenge, receivedAt: new Date().toISOString() })
-  return { ok: true, message: 'Permintaan sesi berhasil dikirim.' }
+  const config = useRuntimeConfig(event)
+  if (config.leadWebhookUrl) {
+    try {
+      await $fetch(config.leadWebhookUrl, {
+        method: 'POST',
+        timeout: 8000,
+        headers: config.leadWebhookToken ? { Authorization: `Bearer ${config.leadWebhookToken}` } : undefined,
+        body: { name, email, company, challenge, source: 'website', receivedAt: new Date().toISOString() },
+      })
+    } catch {
+      throw createError({ statusCode: 502, statusMessage: 'Sistem penerimaan sedang bermasalah. Silakan coba lagi.' })
+    }
+  } else {
+    // Explicit demo mode: no lead is persisted or sent to a third party.
+    console.info('[checkout demo] Configure LEAD_WEBHOOK_URL to deliver leads to a CRM.')
+  }
+  return { ok: true, mode: config.leadWebhookUrl ? 'connected' : 'demo' }
 })
