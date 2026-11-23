@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f6f2"/>
+  <circle cx="940" cy="300" r="310" fill="#e9ede1"/>
+  <circle cx="940" cy="300" r="225" fill="none" stroke="#c9d5bb" stroke-width="2"/>
+  <circle cx="940" cy="300" r="150" fill="none" stroke="#c9d5bb" stroke-width="2"/>
+  <circle cx="1030" cy="190" r="84" fill="#d8c98f" opacity=".78"/>
+  <path d="M735 405 815 360 875 375 935 300 1000 325 1060 235 1137 195" fill="none" stroke="#607b4c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="90" y="145" fill="#718065" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="5">✳  PARTNER PERTUMBUHAN UNTUK TIM KECIL</text>
+  <text x="85" y="300" fill="#18211c" font-family="Arial,sans-serif" font-size="82" font-weight="600" letter-spacing="-4">Tumbuh itu nggak</text>
+  <text x="85" y="398" fill="#18211c" font-family="Arial,sans-serif" font-size="82" font-weight="600" letter-spacing="-4">harus <tspan fill="#6f8a56" font-family="Georgia,serif" font-style="italic" font-weight="400">menebak.</tspan></text>
+  <text x="90" y="485" fill="#747a72" font-family="Arial,sans-serif" font-size="24">Strategi yang jernih. Eksperimen yang terukur.</text>
+  <text x="90" y="565" fill="#18211c" font-family="Arial,sans-serif" font-size="31" font-weight="700" letter-spacing="-1">✳ northstar<tspan fill="#819b58">.</tspan></text>
+</svg>

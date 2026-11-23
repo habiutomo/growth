@@ -1,0 +1,7 @@
+node_modules/
+.nuxt/
+.output/
+.npm-cache/
+.env
+.env.*
+!.env.example
